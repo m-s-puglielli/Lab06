@@ -9,6 +9,6 @@ public class PigHoldAction extends GameAction
 
 	public PigHoldAction(GamePlayer player)
 	{
-		this.player = player;
+		super(player);
 	}
 }
