@@ -9,7 +9,7 @@ public class PigGameState extends GameState
     private int playerOneScore;
     private int runningTotal;
     private int diceValue;
-    
+
 	public PigGameState()
 	{
 		this.turnID = 0;
