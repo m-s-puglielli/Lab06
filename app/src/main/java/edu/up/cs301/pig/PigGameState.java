@@ -7,31 +7,11 @@ public class PigGameState extends GameState
     private int turnID;
     private int playerZeroScore;
     private int playerOneScore;
+      private int runningTotal;
+    private int diceValue;
 
 
-    public int getTurnID() {
-        return turnID;
-    }
-
-    public int getPlayerZeroScore() {
-        return playerZeroScore;
-    }
-
-    public int getPlayerOneScore() {
-        return getPlayerOneScore();
-    }
-
-    public void setTurnID(int turnID) {
-        this.turnID = turnID;
-    }
-
-    public void setPlayerZeroScore(int playerZeroScore) {
-        this.playerZeroScore = playerZeroScore;
-    }
-
-    public void setPlayerOneScore(int playerOneScore) {
-        this.playerOneScore = playerOneScore;
-    }
+   
 
 	public PigGameState()
 	{
@@ -73,5 +53,23 @@ public class PigGameState extends GameState
     public void setPlayerOneScore(int playerOneScore) {
         this.playerOneScore = playerOneScore;
     }
+
+public int getRunningTotal(){
+    return runningTotal;
+}
+
+public int getDice(){
+    return diceValue;
+}
+
+public void setDiceTotal(int diceValue){
+    this.diceValue=diceValue;
+}
+
+public void setRunningTotal(int runningTotal){
+    this.runningTotal= runningTotal;
+}
+
+
 
 }
