@@ -4,6 +4,34 @@ import edu.up.cs301.game.infoMsg.GameState;
 
 public class PigGameState extends GameState
 {
+    private int turnID;
+    private int playerZeroScore;
+    private int playerOneScore;
+
+
+    public int getTurnID() {
+        return turnID;
+    }
+
+    public int getPlayerZeroScore() {
+        return playerZeroScore;
+    }
+
+    public int getPlayerOneScore() {
+        return getPlayerOneScore();
+    }
+
+    public void setTurnID(int turnID) {
+        this.turnID = turnID;
+    }
+
+    public void setPlayerZeroScore(int playerZeroScore) {
+        this.playerZeroScore = playerZeroScore;
+    }
+
+    public void setPlayerOneScore(int playerOneScore) {
+        this.playerOneScore = playerOneScore;
+    }
 
 	public PigGameState()
 	{
@@ -22,4 +50,28 @@ public class PigGameState extends GameState
 		this.runningTotal = that.runningTotal;
 		this.diceValue = that.diceValue;
 	}
+	public int getTurnID() {
+        return turnID;
+    }
+
+    public int getPlayerZeroScore() {
+        return playerZeroScore;
+    }
+
+    public int getPlayerOneScore() {
+        return getPlayerOneScore();
+    }
+
+    public void setTurnID(int turnID) {
+        this.turnID = turnID;
+    }
+
+    public void setPlayerZeroScore(int playerZeroScore) {
+        this.playerZeroScore = playerZeroScore;
+    }
+
+    public void setPlayerOneScore(int playerOneScore) {
+        this.playerOneScore = playerOneScore;
+    }
+
 }
