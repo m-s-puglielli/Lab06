@@ -27,6 +27,11 @@ public class PigGameState extends GameState
 		this.runningTotal = that.runningTotal;
 		this.diceValue = that.diceValue;
 	}
+
+    /**
+     * getter method for turnID variable
+     * @return the PigGameState's turnID
+     */
 	public int getTurnID() {
         return turnID;
     }
