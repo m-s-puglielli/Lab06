@@ -13,13 +13,16 @@ import android.util.Log;
  * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl
  * @version February 2016
  */
-public class PigLocalGame extends LocalGame {
+public class PigLocalGame extends LocalGame
+{
+    private PigGameState the_game_state;
 
     /**
-     * This ctor creates a new game state
+     * This constructor creates a new game state
      */
-    public PigLocalGame() {
-        //TODO  You will implement this constructor
+    public PigLocalGame()
+    {
+        this.the_game_state = new PigGameState();
     }
 
     /**
