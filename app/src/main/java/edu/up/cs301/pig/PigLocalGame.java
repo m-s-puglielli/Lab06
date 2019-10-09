@@ -89,9 +89,16 @@ public class PigLocalGame extends LocalGame
      * @return
      * 		a message that tells who has won the game, or null if the
      * 		game is not over
+     *
      */
     @Override
     protected String checkIfGameOver() {
+        if (game_state.getPlayerZeroScore() >= 50) {
+            return "Player Zero wins with score: " + game_state.getPlayerZeroScore();
+        }
+        else if (game_state.getPlayerOneScore() >= 50) {
+            return "Player One wins with score: " + game_state.getPlayerOneScore();
+        }
         //TODO  You will implement this method
         return null;
     }
