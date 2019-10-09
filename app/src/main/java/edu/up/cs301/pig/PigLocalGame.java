@@ -7,6 +7,8 @@ import edu.up.cs301.game.infoMsg.GameState;
 
 import android.util.Log;
 
+import java.util.Random;
+
 /**
  * class PigLocalGame controls the play of the game
  *
@@ -15,14 +17,14 @@ import android.util.Log;
  */
 public class PigLocalGame extends LocalGame
 {
-    private PigGameState the_game_state;
+    private PigGameState game_state;
 
     /**
      * This constructor creates a new game state
      */
     public PigLocalGame()
     {
-        this.the_game_state = new PigGameState();
+        this.game_state = new PigGameState();
     }
 
     /**
@@ -40,10 +42,33 @@ public class PigLocalGame extends LocalGame
      * @return true if the action was taken or false if the action was invalid/illegal.
      */
     @Override
-    protected boolean makeMove(GameAction action) {
-        //TODO  You will implement this method
-        return false;
-    }//makeMove
+    protected boolean makeMove(GameAction action)
+    {
+        if(action instanceof PigHoldAction)
+        {
+            if(this.game_state.getTurnID() == 0)
+            {
+                this.game_state.setPlayerZeroScore(this.game_state.getRunningTotal());
+                this.game_state.setTurnID(1);
+            }
+            else if(this.game_state.getTurnID() == 1)
+            {
+                this.game_state.setPlayerOneScore(this.game_state.getRunningTotal());
+                this.game_state.setTurnID(0);
+            }
+            this.game_state.setRunningTotal(0);
+            return true;
+        }
+        else if(action instanceof PigRollAction)
+        {
+            Random gen = new Random();
+            int dice = gen.nextInt(6) + 1;
+            if(dice == 1) this.game_state.setRunningTotal(0);
+            else this.game_state.setRunningTotal(this.game_state.getRunningTotal() + dice);
+            return true;
+        }
+        else return false;
+    }
 
     /**
      * send the updated state to a given player
