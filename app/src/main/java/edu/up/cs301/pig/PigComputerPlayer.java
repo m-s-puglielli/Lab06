@@ -31,21 +31,31 @@ public class PigComputerPlayer extends GameComputerPlayer
 	 */
 	@Override
 	protected void receiveInfo(GameInfo info)
-	{
-		// If it is not this player’s turn: return
-		// else do everything below:
-		Random gen = new Random();
-		int coin = gen.nextInt(2); // bounds are [0, 2)
-		if (coin == 0)
-		{
-			PigHoldAction hold_action = new PigHoldAction(this);
-			game.sendAction(hold_action);
-		}
-		else
-		{
-			PigRollAction roll_action = new PigRollAction(this);
-			game.sendAction(roll_action);
-		}
-	}
+    {
+        if(info instanceof PigGameState){
+           if( ((PigGameState) info).getTurnID()!= this.playerNum){
+               return;
+           }
+
+            // If it is not this player’s turn: return
+            // else do everything below:
+
+            Random gen = new Random();
+            int coin = gen.nextInt(2); // bounds are [0, 2)
+            if(coin == 0)
+            {
+                PigHoldAction hold_action = new PigHoldAction(this);
+                game.sendAction(hold_action);
+            }
+            else
+            {
+                PigRollAction roll_action = new PigRollAction(this);
+                game.sendAction(roll_action);
+            }
+
+
+            }
+
+    }
 
 }
