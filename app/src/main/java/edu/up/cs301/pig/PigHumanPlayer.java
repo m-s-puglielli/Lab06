@@ -94,7 +94,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 					break;
 			}
 		}
-		
+
 		flash(0xffffffff, 1);
 		return;
 	}
