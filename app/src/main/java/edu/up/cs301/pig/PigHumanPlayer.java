@@ -69,7 +69,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 			turnTotalTextView.invalidate();
 			messageTextView.invalidate();
 
-			switch(((PigGameState) info).getDice())
+			switch (((PigGameState) info).getDice())
 			{
 				case 1:
 					dieImageButton.setImageResource(R.drawable.face1);
@@ -107,17 +107,17 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 	 */
 	public void onClick(View button)
 	{
-		//TODO  You will implement this method to send appropriate action objects to the game
-
-			if(button.equals(holdButton)){
-				PigHoldAction hold_action = new PigHoldAction(this);
-				game.sendAction(hold_action);
-			}
-			else if(button.equals(dieImageButton)){
-				PigRollAction roll_action = new PigRollAction(this);
-				game.sendAction(roll_action);
-			}
-	}// onClick
+		if (button.equals(holdButton))
+		{
+			PigHoldAction hold_action = new PigHoldAction(this);
+			game.sendAction(hold_action);
+		}
+		else if (button.equals(dieImageButton))
+		{
+			PigRollAction roll_action = new PigRollAction(this);
+			game.sendAction(roll_action);
+		}
+	}//onClick
 
 	/**
 	 * callback method--our game has been chosen/rechosen to be the GUI,
