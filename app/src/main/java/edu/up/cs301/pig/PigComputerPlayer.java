@@ -17,7 +17,7 @@ public class PigComputerPlayer extends GameComputerPlayer
 {
 
 	/**
-	 * ctor does nothing extra
+	 * constructor does nothing extra
 	 */
 	public PigComputerPlayer(String name)
 	{
@@ -42,7 +42,8 @@ public class PigComputerPlayer extends GameComputerPlayer
 		{
 			hold_action = new PigHoldAction(this);
 			game.sendAction(hold_action);
-		} else
+		}
+		else
 		{
 			roll_action = new PigRollAction(this);
 			game.sendAction(roll_action);

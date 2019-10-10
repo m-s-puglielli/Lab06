@@ -62,9 +62,42 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 	@Override
 	public void receiveInfo(GameInfo info)
 	{
-		//TODO You will implement this method to receive state objects from the game
-		Log.d("PigHumanPlayer.java:65", "The receiveInfo method has been called");
-	}//receiveInfo
+		if (info instanceof PigGameState)
+		{
+			playerScoreTextView.invalidate();
+			oppScoreTextView.invalidate();
+			turnTotalTextView.invalidate();
+			messageTextView.invalidate();
+
+			switch(((PigGameState) info).getDice())
+			{
+				case 1:
+					dieImageButton.setImageResource(R.drawable.face1);
+					break;
+				case 2:
+					dieImageButton.setImageResource(R.drawable.face2);
+					break;
+				case 3:
+					dieImageButton.setImageResource(R.drawable.face3);
+					break;
+				case 4:
+					dieImageButton.setImageResource(R.drawable.face4);
+					break;
+				case 5:
+					dieImageButton.setImageResource(R.drawable.face5);
+					break;
+				case 6:
+					dieImageButton.setImageResource(R.drawable.face6);
+					break;
+				default:
+					Log.d("PigHumanPlayer.java:93", "ERROR: getDice() returned a number outside of [1,6]");
+					break;
+			}
+		}
+		
+		flash(0xffffffff, 1);
+		return;
+	}
 
 	/**
 	 * this method gets called when the user clicks the die or hold button. It

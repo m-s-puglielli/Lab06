@@ -54,21 +54,27 @@ public class PigLocalGame extends LocalGame
 			{
 				this.game_state.setPlayerZeroScore(this.game_state.getRunningTotal());
 				this.game_state.setTurnID(1);
-			} else if (this.game_state.getTurnID() == 1)
+			}
+			else if (this.game_state.getTurnID() == 1)
 			{
 				this.game_state.setPlayerOneScore(this.game_state.getRunningTotal());
 				this.game_state.setTurnID(0);
 			}
 			this.game_state.setRunningTotal(0);
 			return true;
-		} else if (action instanceof PigRollAction)
+		}
+		else if (action instanceof PigRollAction)
 		{
 			Random gen = new Random();
 			int dice = gen.nextInt(6) + 1;
-			if (dice == 1) this.game_state.setRunningTotal(0);
-			else this.game_state.setRunningTotal(this.game_state.getRunningTotal() + dice);
+			if (dice == 1)
+				this.game_state.setRunningTotal(0);
+			else
+				this.game_state.setRunningTotal(this.game_state.getRunningTotal() + dice);
 			return true;
-		} else return false;
+		}
+		else
+			return false;
 	}
 
 	/**
@@ -94,7 +100,8 @@ public class PigLocalGame extends LocalGame
 		if (game_state.getPlayerZeroScore() >= 50)
 		{
 			return "Player Zero wins with score: " + game_state.getPlayerZeroScore();
-		} else if (game_state.getPlayerOneScore() >= 50)
+		}
+		else if (game_state.getPlayerOneScore() >= 50)
 		{
 			return "Player One wins with score: " + game_state.getPlayerOneScore();
 		}
