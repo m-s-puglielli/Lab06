@@ -4,11 +4,11 @@ import edu.up.cs301.game.infoMsg.GameState;
 
 public class PigGameState extends GameState
 {
-    private int turnID;
-    private int playerZeroScore;
-    private int playerOneScore;
-    private int runningTotal;
-    private int diceValue;
+	private int turnID;
+	private int playerZeroScore;
+	private int playerOneScore;
+	private int runningTotal;
+	private int diceValue;
 
 	public PigGameState()
 	{
@@ -28,47 +28,58 @@ public class PigGameState extends GameState
 		this.diceValue = that.diceValue;
 	}
 
-    /**
-     * getter method for turnID variable
-     * @return the PigGameState's turnID
-     */
-	public int getTurnID() {
-        return turnID;
-    }
-
-    public int getPlayerZeroScore() {
-        return playerZeroScore;
-    }
-
-    public int getPlayerOneScore() {
-        return getPlayerOneScore();
-    }
-
-    public void setTurnID(int turnID) {
-        this.turnID = turnID;
-    }
-
-    public void setPlayerZeroScore(int playerZeroScore) {
-        this.playerZeroScore = playerZeroScore;
-    }
-
-    public void setPlayerOneScore(int playerOneScore) {
-        this.playerOneScore = playerOneScore;
-    }
-
-	public int getRunningTotal(){
-    	return runningTotal;
+	/**
+	 * getter method for turnID variable
+	 *
+	 * @return the PigGameState's turnID
+	 */
+	public int getTurnID()
+	{
+		return turnID;
 	}
 
-	public int getDice(){
-	    return diceValue;
+	public int getPlayerZeroScore()
+	{
+		return playerZeroScore;
 	}
 
-	public void setDiceTotal(int diceValue){
-	    this.diceValue=diceValue;
+	public int getPlayerOneScore()
+	{
+		return getPlayerOneScore();
 	}
 
-	public void setRunningTotal(int runningTotal){
-	    this.runningTotal= runningTotal;
+	public void setTurnID(int turnID)
+	{
+		this.turnID = turnID;
+	}
+
+	public void setPlayerZeroScore(int playerZeroScore)
+	{
+		this.playerZeroScore = playerZeroScore;
+	}
+
+	public void setPlayerOneScore(int playerOneScore)
+	{
+		this.playerOneScore = playerOneScore;
+	}
+
+	public int getRunningTotal()
+	{
+		return runningTotal;
+	}
+
+	public int getDice()
+	{
+		return diceValue;
+	}
+
+	public void setDiceTotal(int diceValue)
+	{
+		this.diceValue = diceValue;
+	}
+
+	public void setRunningTotal(int runningTotal)
+	{
+		this.runningTotal = runningTotal;
 	}
 }
