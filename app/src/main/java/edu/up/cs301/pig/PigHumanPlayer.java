@@ -68,6 +68,10 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 			oppScoreTextView.invalidate();
 			turnTotalTextView.invalidate();
 			messageTextView.invalidate();
+			
+			playerScoreTextView.setText("" +((PigGameState) info).getPlayerOneScore());
+			oppScoreTextView.setText("" +((PigGameState) info).getPlayerZeroScore());
+			turnTotalTextView.setText(""+((PigGameState) info).getRunningTotal());
 
 			switch (((PigGameState) info).getDice())
 			{
