@@ -103,7 +103,6 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 			}
 
 			dieImageButton.invalidate();
-			holdButton.invalidate();
 		}
 		else
 			flash(0xffff0000, 1);
