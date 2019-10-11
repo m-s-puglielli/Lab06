@@ -45,7 +45,7 @@ public class PigGameState extends GameState
 
 	public int getPlayerOneScore()
 	{
-		return getPlayerOneScore();
+		return playerOneScore;
 	}
 
 	public void setTurnID(int turnID)
