@@ -67,6 +67,7 @@ public class PigLocalGame extends LocalGame
 		{
 			Random gen = new Random();
 			int dice = gen.nextInt(6) + 1;
+			this.game_state.setDiceTotal(dice);
 			if (dice == 1)
 				this.game_state.setRunningTotal(0);
 			else
