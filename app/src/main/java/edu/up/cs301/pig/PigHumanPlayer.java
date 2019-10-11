@@ -64,14 +64,18 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 	{
 		if (info instanceof PigGameState)
 		{
+
+			int playerZeroScore = ((PigGameState) info).getPlayerZeroScore(); // + ((PigGameState) info).getRunningTotal();
+			int playerOneScore = ((PigGameState) info).getPlayerOneScore();
+
+			playerScoreTextView.setText("" + playerZeroScore);
+			oppScoreTextView.setText("" + playerOneScore);
+			turnTotalTextView.setText("" + ((PigGameState) info).getRunningTotal());
+
 			playerScoreTextView.invalidate();
 			oppScoreTextView.invalidate();
 			turnTotalTextView.invalidate();
 			messageTextView.invalidate();
-			
-			playerScoreTextView.setText("" +((PigGameState) info).getPlayerOneScore());
-			oppScoreTextView.setText("" +((PigGameState) info).getPlayerZeroScore());
-			turnTotalTextView.setText(""+((PigGameState) info).getRunningTotal());
 
 			switch (((PigGameState) info).getDice())
 			{
@@ -97,10 +101,12 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener
 					Log.d("PigHumanPlayer.java:93", "ERROR: getDice() returned a number outside of [1,6]");
 					break;
 			}
-		}
 
-		flash(0xffffffff, 1);
-		return;
+			dieImageButton.invalidate();
+			holdButton.invalidate();
+		}
+		else
+			flash(0xffff0000, 1);
 	}
 
 	/**

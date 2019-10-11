@@ -55,12 +55,12 @@ public class PigGameState extends GameState
 
 	public void setPlayerZeroScore(int playerZeroScore)
 	{
-		this.playerZeroScore = playerZeroScore;
+		this.playerZeroScore += playerZeroScore;
 	}
 
 	public void setPlayerOneScore(int playerOneScore)
 	{
-		this.playerOneScore = playerOneScore;
+		this.playerOneScore += playerOneScore;
 	}
 
 	public int getRunningTotal()
