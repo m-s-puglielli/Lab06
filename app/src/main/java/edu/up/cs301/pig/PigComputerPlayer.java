@@ -37,17 +37,15 @@ public class PigComputerPlayer extends GameComputerPlayer
 			if (((PigGameState) info).getTurnID() != this.playerNum)
 				return;
 
-			Random gen = new Random();
-			int coin = gen.nextInt(2); // bounds are [0, 2)
-			if (coin == 0)
-			{
-				PigHoldAction hold_action = new PigHoldAction(this);
-				game.sendAction(hold_action);
-			}
-			else
+			if (((PigGameState) info).getRunningTotal() < 12)
 			{
 				PigRollAction roll_action = new PigRollAction(this);
 				game.sendAction(roll_action);
+			}
+			else
+			{
+				PigHoldAction hold_action = new PigHoldAction(this);
+				game.sendAction(hold_action);
 			}
 		}
 	}
